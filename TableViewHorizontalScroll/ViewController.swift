@@ -17,15 +17,8 @@ class ViewController: UITableViewController {
 		tableView.separatorStyle = .none
 		
 		// 旋转
-		view.transform = CGAffineTransform(rotationAngle: .pi/2)
+		view.transform = CGAffineTransform(rotationAngle: -.pi/2)
 	}
-	
-	override func viewDidAppear(_ animated: Bool) {
-		self.tableView.scrollToRow(at: IndexPath.init(row: 9, section: 0), at: .bottom, animated: false)
-		
-		super.viewDidAppear(animated)
-	}
-
 }
 
 extension ViewController{
@@ -36,7 +29,7 @@ extension ViewController{
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
 		
-		cell.contentView.transform = CGAffineTransform(rotationAngle: -.pi/2)
+		cell.contentView.transform = CGAffineTransform(rotationAngle: .pi/2)
 		
 		return cell
 	}
