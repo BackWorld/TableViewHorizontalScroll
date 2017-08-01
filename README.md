@@ -1,5 +1,3 @@
-# TableViewHorizontalScroll
-
 ![最终效果](http://upload-images.jianshu.io/upload_images/1334681-c7b1be638e1769fb.gif?imageMogr2/auto-orient/strip)
 
 ##### 要求：
@@ -13,11 +11,11 @@
 > 看到网上公认的一种比较简单的方法是旋转tableView和cell.contentView
 
 ```
-// tableView旋转90°
-tableView.transform = CGAffineTransform(rotationAngle: .pi/2)
+// tableView旋转-90°
+tableView.transform = CGAffineTransform(rotationAngle: -.pi/2)
 
 // cell.contentView反向旋转90°
-cell.contentView.transform = CGAffineTransform(rotationAngle: -.pi/2)
+cell.contentView.transform = CGAffineTransform(rotationAngle: .pi/2)
 ```
 - **卡片式布局**
 
@@ -33,9 +31,6 @@ cell.contentView.transform = CGAffineTransform(rotationAngle: -.pi/2)
 tableView.isPagingEnabled = true // 分页
 tableView.rowHeight = view.bounds.width // cell高度
 tableView.separatorStyle = .none // 分割线样式
-
-// viewDidAppear后让table view滚动到最后一行，即左边第一行
-self.tableView.scrollToRow(at: IndexPath.init(row: lastRowIndex, section: 0), at: .bottom, animated: false)
 ```
 
 ### 简书
